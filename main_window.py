@@ -2,6 +2,10 @@ from PyQt6.QtWidgets import (QWidget, QLabel, QRadioButton,
                               QPushButton, QGroupBox, QButtonGroup,
                               QVBoxLayout, QHBoxLayout)
 
+from PyQt6.QtCore import Qt
+
+
+
 C_HEIGHT = 600
 C_WIDTH = 700
 
@@ -47,7 +51,10 @@ radio_btn_box_v_line.addLayout(radio_btn_box_h_line_2)
 
 radio_btn_box.setLayout(radio_btn_box_v_line)
 
-main_v_line.addWidget(question_lb)
+menu_btn = QPushButton("Меню")
+
+main_v_line.addWidget(menu_btn, stretch = 1, alignment = Qt.AlignmentFlag.AlignLeft)
+main_v_line.addWidget(question_lb) 
 main_v_line.addWidget(radio_btn_box)
 
 
