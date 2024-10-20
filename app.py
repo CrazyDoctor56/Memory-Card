@@ -38,15 +38,6 @@ def new_question():
 
 new_question()
 
-def open_menu():
-    window.hide()
-    menu_window.show()
-
-def close_menu():
-    ...
-
-menu_btn.clicked.connect(open_menu)
-
 
 def check_result():
     correct_answer_lb.setText(random_question.answer_text)
@@ -84,6 +75,47 @@ def change_box():
 
 
 btn.clicked.connect(change_box)
+
+def open_menu():
+    window.hide()
+    menu_window.show()
+
+def close_menu():
+    window.show()
+    menu_window.hide()
+
+
+menu_btn.clicked.connect(open_menu)
+menu_back_btn.clicked.connect(close_menu)
+
+def clear_menu():
+    menu_w_text_input_1.clear()
+    menu_w_text_input_2.clear()
+    menu_w_text_input_3.clear()
+    menu_a_text_input_1.clear()
+    menu_q_text_input_1.clear()
+
+
+menu_btn_clear.clicked.connect(clear_menu)
+
+def add_question():
+    new_q = Question(
+        menu_q_text_input_1.text(),
+        menu_a_text_input_1.text(), 
+        (
+            
+            menu_w_text_input_1.text(),
+            menu_w_text_input_2.text(),
+            menu_w_text_input_3.text()
+
+
+        )
+    )
+
+    questions_list.append(new_q)
+    clear_menu()
+
+menu_btn_add.clicked.connect(add_question)
 
 
 
