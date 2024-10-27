@@ -1,6 +1,8 @@
 from random import choice, shuffle
 from PyQt6.QtWidgets import QApplication
 
+# General of programm
+
 
 app = QApplication([])
 
